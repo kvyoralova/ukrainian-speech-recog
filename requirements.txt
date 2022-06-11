@@ -1,3 +1,4 @@
-
+IPython.display
+ipywebrtc
 deepgram-sdk
 aiohttp
