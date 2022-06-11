@@ -12,10 +12,11 @@ recorder = AudioRecorder(stream=camera)
 # turn the recorder on
 # still a bit rusty on whether I need to show it 
 # in a separate cell later to make it work
-recorder.recording = True
+if recorder.recording = True:
+  recorder.save('test.wav')
 # say something
 # turn the recorder off
-recorder.recording = False
-recorder.save('test.wav')
+#recorder.recording = False
+
 # enjoy your wav (a typical user will be happy with compressed sound ofc)
  
