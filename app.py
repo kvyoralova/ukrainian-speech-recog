@@ -1,37 +1,35 @@
+import os
 import streamlit as st
-from bokeh.models.widgets import Button
-from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
+import streamlit.components.v1 as components
 
-stt_button = Button(label="Speak", width=100)
+# DESIGN implement changes to the standard streamlit UI/UX
+st.set_page_config(page_title="streamlit_audio_recorder")
+# Design move app further up and remove top padding
+st.markdown('''<style>.css-1egvi7u {margin-top: -3rem;}</style>''',
+    unsafe_allow_html=True)
+# Design change st.Audio to fixed height of 45 pixels
+st.markdown('''<style>.stAudio {height: 45px;}</style>''',
+    unsafe_allow_html=True)
+# Design change hyperlink href link color
+st.markdown('''<style>.css-v37k9u a {color: #ff4c4b;}</style>''',
+    unsafe_allow_html=True)  # darkmode
+st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
+    unsafe_allow_html=True)  # lightmode
 
-stt_button.js_on_event("button_click", CustomJS(code="""
-    var recognition = new webkitSpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = true;
- 
-    recognition.onresult = function (e) {
-        var value = "";
-        for (var i = e.resultIndex; i < e.results.length; ++i) {
-            if (e.results[i].isFinal) {
-                value += e.results[i][0].transcript;
-            }
-        }
-        if ( value != "") {
-            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
-        }
-    }
-    recognition.start();
-    """))
 
-result = streamlit_bokeh_events(
-    stt_button,
-    events="GET_TEXT",
-    key="listen",
-    refresh_on_update=False,
-    override_height=75,
-    debounce_time=0)
+def audiorec_demo_app():
 
-if result:
-    if "GET_TEXT" in result:
-        st.write(result.get("GET_TEXT"))
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    # Custom REACT-based component for recording client audio in browser
+    build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
+    # specify directory and initialize st_audiorec object functionality
+    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
+
+    # STREAMLIT AUDIO RECORDER Instance
+    st_audiorec()
+
+
+if __name__ == '__main__':
+
+    # call main function
+    audiorec_demo_app()
