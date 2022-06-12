@@ -4,3 +4,4 @@ r = requests.get('https://api.ipdata.co?api-key=88e9d071ff5d290a3400ffb486184750
 clicked = st.button("Give me your location")
 if clicked:
     st.write(r)
+ipdata me
