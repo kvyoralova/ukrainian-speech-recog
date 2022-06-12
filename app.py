@@ -52,7 +52,7 @@ def geo():
               st.write("Ви перебуваєте за межами Італії, тому програма працюватиме англійською мовою.")
               st.write("You are out of Italy, so the app will run in English.")
 
-geo():
+geo()
 
 if st.button(":-)")
     if language == 'it':
