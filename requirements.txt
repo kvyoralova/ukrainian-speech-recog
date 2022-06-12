@@ -4,3 +4,4 @@ aiohttp
 bokeh
 streamlit_bokeh_events
 sounddevice
+OSMPythonTools
