@@ -52,8 +52,6 @@ def geo():
               st.write("Ви перебуваєте за межами Італії, тому програма працюватиме англійською мовою.")
               st.write("You are out of Italy, so the app will run in English.")
 
-geo()
-
 if geo():
     if language == 'it':
         st.title('Правоgrafia: навчись добре писати італійською! Impara a scrivere bene in italiano!')
