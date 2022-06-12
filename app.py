@@ -4,6 +4,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 import leafmap.foliumap as leafmap
+import geopy
 from geopy.geocoders import Nominatim
 
 
