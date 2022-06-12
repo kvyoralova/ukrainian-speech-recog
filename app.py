@@ -5,6 +5,6 @@ import streamlit as st
 with st.empty():
      for seconds in range(5):
          st.write("cane")
-         time.sleep(5)
+         time.sleep(1)
 
     
