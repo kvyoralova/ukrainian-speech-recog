@@ -5,10 +5,12 @@ import streamlit as st
 placeholder = st.empty()
 
 # Replace the placeholder with some text:
-#placeholder.text("Hello")
+placeholder.text("Hello")
+time.sleep(5)
 
 # Replace the text with a chart:
-#placeholder.line_chart({"data": [1, 5, 2, 6]})
+placeholder.line_chart({"data": [1, 5, 2, 6]})
+time.sleep(5)
 
 # Replace the chart with several elements:
 with placeholder.container():
