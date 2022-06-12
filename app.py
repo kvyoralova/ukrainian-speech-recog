@@ -2,7 +2,7 @@
 import time
 import streamlit as st
 
-#placeholder = st.empty()
+placeholder = st.empty()
 
 # Replace the placeholder with some text:
 #placeholder.text("Hello")
