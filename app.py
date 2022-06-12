@@ -38,9 +38,9 @@ def app():
             lat = loc.get("lat")
             lon = loc.get("lon")
             st.write(f"Lat, Lon: {lat}, {lon}")
-            
+            latlon = str(lat + "," + lon)
             geoLoc = Nominatim(user_agent="GetLoc")
-            locname = geoLoc.reverse(lat, lon)
+            locname = geoLoc.reverse(latlon)
             st.write(locname.address)
 
             m = leafmap.Map(center=(lat, lon), zoom=16)
