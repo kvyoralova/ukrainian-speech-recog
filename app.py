@@ -51,7 +51,7 @@ def geo():
               language =  "en"
               st.write("Ви перебуваєте за межами Італії, тому програма працюватиме англійською мовою.")
               st.write("You are out of Italy, so the app will run in English.")
-    return language
+            return language
 
 geo()
 
